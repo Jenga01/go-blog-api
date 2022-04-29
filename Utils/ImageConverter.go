@@ -46,7 +46,7 @@ func Base64toPng(data string, ch chan []string) <-chan []string {
 			}
 
 			pngFilename := createImageName(5) + ".png"
-			dirAndFilename := pngFilename
+			dirAndFilename := dir + pngFilename
 			f, err := os.Create(filepath.Join(dir, pngFilename))
 
 			if err != nil {
