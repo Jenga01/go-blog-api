@@ -1,4 +1,5 @@
 FROM golang:alpine AS builder
+RUN apk add git
 
 #adding needed env variables
 ENV GO111MODULE=on \
@@ -8,11 +9,6 @@ ENV GO111MODULE=on \
 LABEL maintainer="Jevgenij Bogdasic <jevbogd@gmail.com>"
 #move to /build
 WORKDIR /app
-
-#copy dependancies
-COPY go.mod .
-COPY go.sum .
-RUN go mod download
 
 #add code to container
 COPY . .
