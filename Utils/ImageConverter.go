@@ -51,7 +51,6 @@ func Base64toPng(data string, ch chan []string) <-chan []string {
 
 			if err != nil {
 				log.Fatal(err)
-				//panic(err)
 			}
 			if _, err := f.Write(rawDecodedImage); err != nil {
 				log.Fatal(err)

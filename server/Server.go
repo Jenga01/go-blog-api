@@ -22,9 +22,6 @@ func Run() {
 		fmt.Println("We are getting the env values")
 	}
 
-	//DBURL := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_USER"), os.Getenv("DB_NAME"), os.Getenv("DB_PASSWORD"))
-
-	//Config.DB, err = gorm.Open("postgres", "host='blog-postgres' port=5432 user=postgres dbname='postgres' password='qwerty' sslmode=disable")
 	DBURL := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_USER"), os.Getenv("DB_NAME"), os.Getenv("DB_PASSWORD"))
 
 	Config.DB, err = gorm.Open("postgres", DBURL)
