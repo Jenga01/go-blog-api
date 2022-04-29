@@ -8,8 +8,8 @@ import (
 
 func GeneratePaginationFromRequest(c *gin.Context) models.Pagination {
 
-	limit := 2
-	page := 1
+	var limit = 10
+	var page = 1
 	sort := "created_at asc"
 	query := c.Request.URL.Query()
 	for key, value := range query {
