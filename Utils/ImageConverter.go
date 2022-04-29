@@ -3,6 +3,7 @@ package utils
 import (
 	"encoding/base64"
 	"fmt"
+	"log"
 	"math/rand"
 	"os"
 	"path/filepath"
@@ -37,21 +38,26 @@ func Base64toPng(data string, ch chan []string) <-chan []string {
 					panic("\nbase64 input is corrupt, check service Key")
 				}
 				fmt.Sprintln("Error:", err)
-				//panic(err)
 			}
 			dir := "images/"
+			if _, err := os.Stat(dir); os.IsNotExist(err) {
+				err := os.Mkdir(dir, 0755)
+				check(err)
+			}
+
 			pngFilename := createImageName(5) + ".png"
-			dirAndFilename := dir + pngFilename
+			dirAndFilename := pngFilename
 			f, err := os.Create(filepath.Join(dir, pngFilename))
 
 			if err != nil {
-				fmt.Sprintln("Error:", err)
+				log.Fatal(err)
+				//panic(err)
 			}
 			if _, err := f.Write(rawDecodedImage); err != nil {
-				fmt.Sprintln("Error:", err)
+				log.Fatal(err)
 			}
 			if err := f.Sync(); err != nil {
-				fmt.Sprintln("Error:", err)
+				log.Fatal(err)
 			}
 			out = append(out, dirAndFilename)
 			fmt.Println("base64toPng sent data is:", dirAndFilename)
@@ -83,4 +89,10 @@ func createImageName(n int) string {
 		b[i] = letterBytes[rand.Intn(len(letterBytes))]
 	}
 	return string(b)
+}
+
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
 }
