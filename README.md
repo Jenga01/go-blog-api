@@ -306,6 +306,16 @@ ubeK6t3gnXdG4wwziiii/UTKMOg6dbzJLFE4dSCP3rEdeOM8805tDsGMvySgSsS6rM6gk9eAcUUVftZt
 
 pm.environment.set('content', JSON.stringify(content));
 ```
+*body*
+
+```
+{
+    "title": "some title",
+    "content":{{content}},
+    "article_id": 3
+}
+```
+
 *Response*
 
 ```
