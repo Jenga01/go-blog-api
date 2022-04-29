@@ -313,10 +313,10 @@ pm.environment.set('content', JSON.stringify(content));
     "data": {
         "ID": 5,
         "title": "some title",
-        "content": "<img src=\"XVlBz.png\" alt=\"Red dot\" />\n<img src=\"gbaiC.png\" />\n<img src=\"MRAjW.png\" alt=\"Green dot\" />\n<img src=\"whTHc.png\" alt=\"minions\" />\n",
+        "content": "<img src=\"images/XVlBz.png\" alt=\"Red dot\" />\n<img src=\"images/gbaiC.png\" />\n<img src=\"images/MRAjW.png\" alt=\"Green dot\" />\n<img src=\"images/whTHc.png\" alt=\"minions\" />\n",
         "article_id": 3,
-        "created_at": "2022-04-29T12:05:42.604014838Z",
-        "updated_at": "2022-04-29T12:05:42.604014838Z"
+        "created_at": "2022-04-29T12:20:14.880868358Z",
+        "updated_at": "2022-04-29T12:20:14.880868358Z"
     }
 }
 ```
