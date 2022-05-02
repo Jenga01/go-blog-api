@@ -4,9 +4,8 @@ go 1.14
 
 require (
 	github.com/badoux/checkmail v1.2.1
-	github.com/gin-gonic/gin v1.6.3
+	github.com/gin-gonic/gin v1.7.0
 	github.com/go-playground/assert/v2 v2.0.1
-	github.com/go-playground/validator/v10 v10.3.0 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang/protobuf v1.4.2 // indirect
 	github.com/jinzhu/gorm v1.9.16
